@@ -66,20 +66,20 @@
 # [('Tuple1', 121), ('Tuple2', 125), ('Tuple3', 135), ('Tuple4', 478)]
 # ['Tuple1', 'Tuple2', 'Tuple3', 'Tuple4']
 # [('Tuple1', 121), ('Tuple2', 125), ('Tuple3', 135), ('Tuple4', 478)]
-arr=[]
-for i in range(int(input('Enter the number of tuples:'))):
-    temp=list(input().split())
-    arr.append((temp[0],int(temp[1])))
-print(arr)
+# arr=[]
+# for i in range(int(input('Enter the number of tuples:'))):
+#     temp=list(input().split())
+#     arr.append((temp[0],int(temp[1])))
+# print(arr)
     
-ans=[]
-visited=[]
-for i in range (len(arr)):
-    if arr[i][0] not in visited:
-        ans.append(arr[i])
-        visited.append(arr[i][0])
-print(visited)
-print(ans)
+# ans=[]
+# visited=[]
+# for i in range (len(arr)):
+#     if arr[i][0] not in visited:
+#         ans.append(arr[i])
+#         visited.append(arr[i][0])
+# print(visited)
+# print(ans)
 
 #q2
 # vote = list(map(input().split())
@@ -106,43 +106,49 @@ print(ans)
 
 #Assignment 3
 
-# def give(n):
-#     ans=[]
-#     for i in range(1,11):
-#         ans.append(n*i)
-#     return ans
+def give(n):
+    ans=[]
+    for i in range(1,11):
+        ans.append(n*i)
+    return ans
 
 
-# with open('table.txt','w') as f:
-#     for i in range(1,21):
-#         arr=give(i)
-#         ans=[i,':',*arr]
-#         # print(*ans)
-#         # f.write(*ans)
-#         for j in ans:
-#             f.write(str(j))
-#             f.write(' ')
-#         f.write('\n')
+with open('table.txt','w') as f:
+    for i in range(1,21):
+        arr=give(i)
+        ans=[i,':',*arr]
+        # print(*ans)
+        # f.write(*ans)
+        for j in ans:
+            f.write(str(j))
+            f.write(' ')
+        f.write('\n')
 
-# with open('table.txt','a') as f:
-#     for i in range(21,41):
-#         arr=give(i)
-#         ans=[i,':',*arr]
-#         # print(*ans)
-#         # f.write(*ans)
-#         for j in ans:
-#             f.write(str(j))
-#             f.write(' ')
-#         f.write('\n')
-# with open('table.txt','r') as f:
-#     lines = f.readlines()
-#     d={}
-#     for line in lines:
-#         if int(line[:2]) not in d:
-#             d[int(line[:2])]=line[2:-2]
-#     for i in d:
-#         print(i,d[i])
-#     print(d)
-# import pickle
-# pickle.dump(d,open('new.p','wb'))
+with open('table.txt','a') as f:
+    for i in range(21,41):
+        arr=give(i)
+        ans=[i,':',*arr]
+        # print(*ans)
+        # f.write(*ans)
+        for j in ans:
+            f.write(str(j))
+            f.write(' ')
+        f.write('\n')
+with open('table.txt','r') as f:
+    lines = f.readlines()
+    d={}
+    for line in lines:
+        if int(line[:2]) not in d:
+            d[int(line[:2])]=line[2:-2]
+    for i in d:
+        print(i,d[i])
+    # print(d)
+#using pickle to dump dict object
+import pickle
+pickle.dump(d,open('new.p','wb'))
 
+#taking user input and printing table for that input
+n=int(input("Enter the number:"))
+for i in d:
+    if int(i)==n:
+        print(d[i][3:])
