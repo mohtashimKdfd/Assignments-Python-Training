@@ -106,49 +106,59 @@
 
 #Assignment 3
 
-def give(n):
-    ans=[]
-    for i in range(1,11):
-        ans.append(n*i)
-    return ans
+# def give(n):
+#     ans=[]
+#     for i in range(1,11):
+#         ans.append(n*i)
+#     return ans
 
 
-with open('table.txt','w') as f:
-    for i in range(1,21):
-        arr=give(i)
-        ans=[i,':',*arr]
-        # print(*ans)
-        # f.write(*ans)
-        for j in ans:
-            f.write(str(j))
-            f.write(' ')
-        f.write('\n')
+# with open('table.txt','w') as f:
+#     for i in range(1,21):
+#         arr=give(i)
+#         ans=[i,':',*arr]
+#         # print(*ans)
+#         # f.write(*ans)
+#         for j in ans:
+#             f.write(str(j))
+#             f.write(' ')
+#         f.write('\n')
 
-with open('table.txt','a') as f:
-    for i in range(21,41):
-        arr=give(i)
-        ans=[i,':',*arr]
-        # print(*ans)
-        # f.write(*ans)
-        for j in ans:
-            f.write(str(j))
-            f.write(' ')
-        f.write('\n')
-with open('table.txt','r') as f:
-    lines = f.readlines()
-    d={}
-    for line in lines:
-        if int(line[:2]) not in d:
-            d[int(line[:2])]=line[2:-2]
-    for i in d:
-        print(i,d[i])
-    # print(d)
-#using pickle to dump dict object
-import pickle
-pickle.dump(d,open('new.p','wb'))
+# with open('table.txt','a') as f:
+#     for i in range(21,41):
+#         arr=give(i)
+#         ans=[i,':',*arr]
+#         # print(*ans)
+#         # f.write(*ans)
+#         for j in ans:
+#             f.write(str(j))
+#             f.write(' ')
+#         f.write('\n')
+# with open('table.txt','r') as f:
+#     lines = f.readlines()
+#     d={}
+#     for line in lines:
+#         if int(line[:2]) not in d:
+#             d[int(line[:2])]=line[2:-2]
+#     for i in d:
+#         print(i,d[i])
+#     # print(d)
+# #using pickle to dump dict object
+# import pickle
+# pickle.dump(d,open('new.p','wb'))
 
-#taking user input and printing table for that input
-n=int(input("Enter the number:"))
-for i in d:
-    if int(i)==n:
-        print(d[i][3:])
+# #taking user input and printing table for that input
+# n=int(input("Enter the number:"))
+# for i in d:
+#     if int(i)==n:
+#         print(d[i][3:])
+#ouput screen
+#Enter the number:37
+# 37 74 111 148 185 222 259 296 333 370 
+
+
+# Zipp Practice
+# arr=[1,2,3,5]
+# name = ['Mk','mk2','Mk3','Mk4']
+# d={i:j for (i,j) in (zip(arr,name))}
+# print(d)
