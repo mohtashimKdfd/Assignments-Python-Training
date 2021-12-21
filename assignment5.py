@@ -1,32 +1,38 @@
-# from abc import ABC,abstractmethod
+from abc import ABC,abstractmethod
 
-# class Shape(ABC):
-#     @abstractmethod
-#     def area(self):
-#         pass
-# class child(Shape):
-#     def shape(self):
-#         s=int(input('Enter The shape'))
-#         if s=='traingle':
-#             self.triangle()
-#         elif s=='square':
-#             self.square()
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        print("Area")
+class child(Shape):
+    def area(self):
+        super().area()
+        print("HElll yeah")
+    def shape(self):
+        s=input('Enter The shape:')
+        if s=='traingle':
+            self.triangle()
+        elif s=='square':
+            self.square()
+        elif s=='rectangle':
+            self.rectangle()
 
-#     def triangle(self):
-#         b=int(input())
-#         h=int(input())
-#         return 0.5*b*h
-#     def rectangle(self):
-#         l=int(input())
-#         b=int(input())
-#         return l*b
-#     def square(self):
-#         l=int(input())
-#         return l*l
+    def triangle(self):
+        b=int(input())
+        h=int(input())
+        print(0.5*b*h)
+    def rectangle(self):
+        l=int(input())
+        b=int(input())
+        print(l*b)
+    def square(self):
+        l=int(input())
+        print(l*l)
 
-# # s = Shape()
-# c=child()
-# c.shape()
+# s = Shape()
+c=child()
+c.area()
+c.shape()
 
 # q3
 
@@ -62,9 +68,7 @@
 #             curr=curr.next
 #         x=Node(data)
 #         x.next = curr.next
-#         curr.next=x
-#         return head
-
+#         curr.next=xreturn 
 #     def prin(self,head):
 #         while head:
 #             print(head.val,end=">")
@@ -77,6 +81,10 @@
 #             curr = curr.next
 #         curr.next=curr.next.next
 #         return head
+
+#     # 1>2>3>None
+#     # none<1<2<3
+#     # none<1
 
 #     def reverse(self,head):
 #         curr=head
@@ -109,52 +117,52 @@
 # curr = ll.reverse(head)
 # ll.prin(curr)
 
-class Car:
-    def __init__(self,speed,regprice,clr):
-        self.Speed = speed
-        self.regularPrice = regprice
-        self.color = clr
-    def doublegetSalePrice(self):
-        return self.regularPrice
+# class Car:
+#     def __init__(self,speed,regprice,clr):
+#         self.Speed = speed
+#         self.regularPrice = regprice
+#         self.color = clr
+#     def doublegetSalePrice(self):
+#         return self.regularPrice
 
-class Truck(Car):
-    def __init__(self, speed,regprice,clr,wt):
-        self.weight = wt
-        # self.regularPrice=super().regularPrice
-        Car.__init__(self,speed,regprice,clr)
+# class Truck(Car):
+#     def __init__(self, speed,regprice,clr,wt):
+#         self.weight = wt
+#         # self.regularPrice=super().regularPrice
+#         Car.__init__(self,speed,regprice,clr)
         
-    def op(self):
-        if self.weight>2000:
-            self.regularPrice*=0.9
+#     def op(self):
+#         if self.weight>2000:
+#             self.regularPrice*=0.9
     
 
 
-class Ford(Car):
-    def __init__(self,speed,regprice,clr,mfgdiscount):
-        self.Manufacturer_discount = mfgdiscount
-        Car.__init__(self,speed,regprice,clr)        
-    def op(self):
-        self.regularPrice-=self.Manufacturer_discount
+# class Ford(Car):
+#     def __init__(self,speed,regprice,clr,mfgdiscount):
+#         self.Manufacturer_discount = mfgdiscount
+#         Car.__init__(self,speed,regprice,clr)        
+#     def op(self):
+#         self.regularPrice-=self.Manufacturer_discount
 
-class Sedan(Car):
-    def __init__(self,speed,regprice,clr,lengthh):
-        self.length = lengthh
-        Car.__init__(self,speed,regprice,clr)
+# class Sedan(Car):
+#     def __init__(self,speed,regprice,clr,lengthh):
+#         self.length = lengthh
+#         Car.__init__(self,speed,regprice,clr)
 
-    def op(self):
-        if self.length>20:
-            self.regularPrice*=0.95
-        else:
-            self.regularPrice*=0.9
+#     def op(self):
+#         if self.length>20:
+#             self.regularPrice*=0.95
+#         else:
+#             self.regularPrice*=0.9
 
-Car(20,10000,'B')
-T = Truck(20,40000,'B',20000)
-T.op()
-print(T.doublegetSalePrice())
+# Car(20,10000,'B')
+# T = Truck(20,40000,'B',20000)
+# T.op()
+# print(T.doublegetSalePrice())
 
-S=Sedan(20,10000,'B',10)
-S.op()
-print(S.doublegetSalePrice())
-F=Ford(20,20000,'B',100)
-F.op()
-print(F.doublegetSalePrice())
+# S=Sedan(20,10000,'B',30)
+# S.op()
+# print(S.doublegetSalePrice())
+# F=Ford(20,20000,'B',100)
+# F.op()
+# print(F.doublegetSalePrice())

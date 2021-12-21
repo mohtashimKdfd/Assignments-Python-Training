@@ -471,7 +471,4 @@
 
 # Zipp Practice
 # arr=[1,2,3,5]
-# name = ['Mk','mk2','Mk3','Mk4']
-# d={i:j for (i,j) in (zip(arr,name))}
-# print(d)
 

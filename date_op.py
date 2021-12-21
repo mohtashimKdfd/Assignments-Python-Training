@@ -7,7 +7,7 @@ class my_date:
     def __init__(self,s):
         self.x=s
 
-    def giveAge(self):
+    def giveAge(self):  #timedelta 
         givenS=self.x
         today = list(datetime.today().strftime('%d-%m-%Y').split('-'))
         birth=list(givenS.split('/'))
