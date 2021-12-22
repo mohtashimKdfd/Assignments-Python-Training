@@ -471,4 +471,8 @@
 
 # Zipp Practice
 # arr=[1,2,3,5]
+# arry =['mk','mk1','mk2','mk3']
+# for i,j in enumerate(zip(arr,arry)):
+#     print(i,j)
 
+# print(list(zip(arr,arry)))
