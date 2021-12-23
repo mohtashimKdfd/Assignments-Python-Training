@@ -127,29 +127,48 @@
 # greet(shout)
 # greet(whisper)
 
-def makeOdd(arr):
+# def makeOdd(arr):
     
-    s=0
-    for i in arr:
-        if i%2==0:
-            s+=i
-        else:
-            continue
-    if s%2==0:
-        s+=1
-        return s
-    else:
-        return s
+#     s=0
+#     for i in arr:
+#         if i%2==0:
+#             s+=i
+#         else:
+#             continue
+#     if s%2==0:
+#         s+=1
+#         return s
+#     else:
+#         return s
 
-def calcEVEN(arr):
-    s=0
-    for i in arr:
-        if i%2==0:
-            s+=i
-    return s
+# def calcEVEN(arr):
+#     s=0
+#     for i in arr:
+#         if i%2==0:
+#             s+=i
+#     return s
 
-def calculateSUM(function):
-    calc = function(list(map(int,input("Enter the array: ").split())))
-    print(calc)
-calculateSUM(calcEVEN)
-calculateSUM(makeOdd)
+# def calculateSUM(function):
+#     calc = function(list(map(int,input("Enter the array: ").split())))
+#     print(calc)
+# calculateSUM(calcEVEN)
+# calculateSUM(makeOdd)
+
+
+
+def changes(function):
+    def upper():
+        print('upper',s.upper())
+    
+        function(s)
+        print('lower',s.lower())
+    
+    return upper()
+
+s=input()
+
+@changes
+def hello(s):
+    print(s)
+
+# hello(s)
