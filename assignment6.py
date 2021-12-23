@@ -156,19 +156,36 @@
 
 
 
-def changes(function):
-    def upper():
-        print('upper',s.upper())
+# def changes(function):
+#     def upper():
+#         print('upper',s.upper())
     
-        function(s)
-        print('lower',s.lower())
+#         function(s)
+#         print('lower',s.lower())
     
-    return upper()
+#     return upper()
 
-s=input()
+# s=input()
 
-@changes
-def hello(s):
-    print(s)
+# @changes
+# def hello(s):
+#     print(s)
 
 # hello(s)
+
+# arr=list(map(int,input().split()))
+# def changes(function):
+#     def EvenSum(arr):
+#         s=0
+#         for i in arr:
+#             if i%2==0:
+#                 s+=i
+#         print("EVENSUM",s)
+
+#     function(arr)
+#     return EvenSum(arr)
+
+# @changes
+# def calculateSum(arr):
+#     return sum(arr)
+
